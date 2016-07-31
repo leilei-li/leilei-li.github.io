@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Mysql增加远程访问权限 | 黎雷蕾的技术博客</title>
+    <title>centos环境安装tomcat | 黎雷蕾的技术博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Leilei Li">
     
 
     
-    <meta name="description" content="转载请注明原作者 @yoshino无论是MariaDB还是Mysql，默认都是没有远程登录的权限的。但是直接给root权限不太安全，我建议是增加一个新的账号，让其代替root远程登录。">
+    <meta name="description" content="转载请注明原作者 @yoshino写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。如果显示不完整可以在我的简书上查看。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql增加远程访问权限">
-<meta property="og:url" content="http://yoursite.com/2016/07/31/20160731/index.html">
+<meta property="og:title" content="centos环境安装tomcat">
+<meta property="og:url" content="http://yoursite.com/2016/07/31/install-tomcat-centos/index.html">
 <meta property="og:site_name" content="黎雷蕾的技术博客">
-<meta property="og:description" content="转载请注明原作者 @yoshino无论是MariaDB还是Mysql，默认都是没有远程登录的权限的。但是直接给root权限不太安全，我建议是增加一个新的账号，让其代替root远程登录。">
-<meta property="og:updated_time" content="2016-07-31T14:51:12.000Z">
+<meta property="og:description" content="转载请注明原作者 @yoshino写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。如果显示不完整可以在我的简书上查看。">
+<meta property="og:updated_time" content="2016-07-31T15:33:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mysql增加远程访问权限">
-<meta name="twitter:description" content="转载请注明原作者 @yoshino无论是MariaDB还是Mysql，默认都是没有远程登录的权限的。但是直接给root权限不太安全，我建议是增加一个新的账号，让其代替root远程登录。">
+<meta name="twitter:title" content="centos环境安装tomcat">
+<meta name="twitter:description" content="转载请注明原作者 @yoshino写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。如果显示不完整可以在我的简书上查看。">
 
     
     <link rel="alternative" href="/atom.xml" title="黎雷蕾的技术博客" type="application/atom+xml">
@@ -74,23 +74,41 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/31/20160731/" title="Mysql增加远程访问权限" itemprop="url">Mysql增加远程访问权限</a>
+      <a href="/2016/07/31/install-tomcat-centos/" title="centos环境安装tomcat" itemprop="url">centos环境安装tomcat</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Leilei Li" target="_blank" itemprop="author">Leilei Li</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-31T04:10:33.000Z" itemprop="datePublished"> Published 2016-07-31</time>
+    <time datetime="2016-07-31T15:25:51.000Z" itemprop="datePublished"> Published 2016-07-31</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<p><strong>转载请注明原作者 @yoshino</strong><br>无论是MariaDB还是Mysql，默认都是没有远程登录的权限的。但是直接给root权限不太安全，我建议是增加一个新的账号，让其代替root远程登录。</p>
+		<p><strong>转载请注明原作者 @yoshino</strong><br>写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。<br>如果显示不完整可以在我的简书上查看。<br><a id="more"></a><br>主要是mysql+jdk+tomcat三个部分就能够配置好了  </p>
 <hr>
-<a id="more"></a>
-<p>假设我们要新建一个用户名:admin 密码：password的账户<br>登录数据库之后只需要键入一下两行代码：<br><code>grant all privileges on *.* to admin@localhost identified by &#39;password&#39; with grant option</code><br><code>grant all privileges on *.* to admin@&quot;%&quot; identified by &#39;password&#39; with grant option</code><br>再重启mysql服务就行了。</p>
+<p>#mysql<br>mysql现在有了MariaDB代替，二者几乎完全一样，连命令也差不多，用起来很方便，不过最近用得多的还是mysql<br>貌似centos7不再支持mysql了，不过可以用MariaDB代替，至少我认为两者除了名字不同之外其余的都相同了。</p>
+<ul>
+<li>一键安装<br><code>yum install mariadb*</code> 注意*号，是安装它全家 </li>
+<li>安装包的安装<br>暂时没有成功过，以后再来写</li>
+<li>配置UTF8<br>mysql要把默认的字符集改为UTF8,要不然写入中文的话就会识别不了：<br>网上的配置中一般提到要改两个地方，但是我只改了一个地方就可以了<br><code>[mysql]标签下加入
+default-character-set=utf8</code></li>
+<li>重启命令<br>service 命令不知道为何用不了了<br><code>$mysql_dir/bin/mysqladmin -uroot -p shutdown</code>关闭<br><code>$mysql_dir/bin/mysqld_safe &amp;</code>启动<br>一般来说会随系统自启的，这个是不用怎么管的</li>
+</ul>
+<hr>
+<p>#jdk<br>这个比较简单  </p>
+<ol>
+<li>安装<br>网上下载 jdk-7u79-linux-x64.tar.gz到/usr/local/java<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/java</div><div class="line">sudo tar xvf jdk-7u79-linux-x64.tar.gz</div><div class="line">```  </div><div class="line">2. 配置</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>vim /etc/profile<br>在下面追加：<br>JAVA_HOME=/usr/local/java/jdk1.7.0_79<br>JRE_HOME=/usr/local/java/jdk1.7.0_79/jre<br>PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin<br>CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib<br>export JAVA_HOME JRE_HOME PATH CLASSPATH<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">运行</div><div class="line">`source /etc/profile`</div><div class="line">查看是否安装成功  </div><div class="line">`java -version`</div><div class="line">***</div><div class="line">#tomcat</div><div class="line">这个最简单了</div><div class="line">下载apache-tomcat-7.0.69.tar.gz到/usr/local</div></pre></td></tr></table></figure></p>
+<p>tar -zxv -f apache-tomcat-7.0.69.tar.gz<br>mv apache-tomcat-7.0.69  tomcat<br><code>``
+启动与停止</code>/usr/local/tomcat/bin/startup.sh<code>`/usr/local/tomcat/bin/shutdown.sh</code><br>改端口号</p>
+<blockquote>
+<p>在Tomcat的conf文件夹里有个server.xml文件，修改里面的<br>Connector<br>port=”80”               maxHttpHeaderSize=”8192”<br>maxThreads=”150” minSpareThreads=”25” maxSpareThreads=”75”<br>enableLookups=”false” redirectPort=”8443” acceptCount=”100”<br>connectionTimeout=”20000” disableUploadTimeout=”true”<br>这段代码，那个port值就是端口号,改成想要的就行了。</p>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -103,7 +121,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/07/31/20160731/" data-title="Mysql增加远程访问权限 | 黎雷蕾的技术博客" data-tsina="2726422443" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/07/31/install-tomcat-centos/" data-title="centos环境安装tomcat | 黎雷蕾的技术博客" data-tsina="2726422443" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -116,20 +134,20 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/07/31/install-tomcat-centos/" title="centos环境安装tomcat">
-  <strong>上一篇：</strong><br/>
-  <span>
-  centos环境安装tomcat</span>
+
+<div class="next">
+<a href="/2016/07/31/20160731/"  title="Mysql增加远程访问权限">
+ <strong>下一篇：</strong><br/> 
+ <span>Mysql增加远程访问权限
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/31/20160731/" data-title="Mysql增加远程访问权限" data-url="http://yoursite.com/2016/07/31/20160731/"></div>
+	<div class="ds-thread" data-thread-key="2016/07/31/install-tomcat-centos/" data-title="centos环境安装tomcat" data-url="http://yoursite.com/2016/07/31/install-tomcat-centos/"></div>
 </section>
 
 
