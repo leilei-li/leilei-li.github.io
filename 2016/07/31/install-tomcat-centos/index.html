@@ -11,24 +11,26 @@
     
 
     
-    <meta name="description" content="转载请注明原作者 @yoshino写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。如果显示不完整可以在我的简书上查看。">
+    <meta name="description" content="转载请注明原作者 @yoshino(简书)写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。如果显示不完整可以在我的简书上查看。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos环境安装tomcat">
 <meta property="og:url" content="http://yoursite.com/2016/07/31/install-tomcat-centos/index.html">
 <meta property="og:site_name" content="黎雷蕾的技术博客">
-<meta property="og:description" content="转载请注明原作者 @yoshino写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。如果显示不完整可以在我的简书上查看。">
-<meta property="og:updated_time" content="2016-07-31T15:33:36.000Z">
+<meta property="og:description" content="转载请注明原作者 @yoshino(简书)写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。如果显示不完整可以在我的简书上查看。">
+<meta property="og:updated_time" content="2016-08-02T11:59:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos环境安装tomcat">
-<meta name="twitter:description" content="转载请注明原作者 @yoshino写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。如果显示不完整可以在我的简书上查看。">
+<meta name="twitter:description" content="转载请注明原作者 @yoshino(简书)写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。如果显示不完整可以在我的简书上查看。">
 
     
     <link rel="alternative" href="/atom.xml" title="黎雷蕾的技术博客" type="application/atom+xml">
     
     
+    <link rel="icon" href="/img/yoshino.ico">
     
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="apple-touch-icon" href="/img/yoshino.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/yoshino.jpg">
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -42,7 +44,7 @@
 				<h1 class="site-name"><a href="/" title="黎雷蕾的技术博客">黎雷蕾的技术博客</a></h1>
 				<h2 class="blog-motto">三十年机器厌学研究僧</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -58,7 +60,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -81,13 +83,13 @@
 		<a href="/about" title="Leilei Li" target="_blank" itemprop="author">Leilei Li</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-31T15:25:51.000Z" itemprop="datePublished"> 发表于 2016-07-31</time>
+    <time datetime="2016-07-31T15:25:51.000Z" itemprop="datePublished"> Published 2016-07-31</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<p><strong>转载请注明原作者 @yoshino</strong><br>写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。<br>如果显示不完整可以在我的简书上查看。<br><a id="more"></a><br>主要是mysql+jdk+tomcat三个部分就能够配置好了  </p>
+		<p><strong>转载请注明原作者 @yoshino(简书)</strong><br>写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。<br>如果显示不完整可以在我的简书上查看。<br><a id="more"></a><br>主要是mysql+jdk+tomcat三个部分就能够配置好了  </p>
 <hr>
 <p>#mysql<br>mysql现在有了MariaDB代替，二者几乎完全一样，连命令也差不多，用起来很方便，不过最近用得多的还是mysql<br>貌似centos7不再支持mysql了，不过可以用MariaDB代替，至少我认为两者除了名字不同之外其余的都相同了。</p>
 <ul>
@@ -152,17 +154,17 @@ default-character-set=utf8</code></li>
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
+  <strong class="toc-title">Contents</strong>
  
  
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
@@ -170,7 +172,7 @@ default-character-set=utf8</code></li>
   
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -186,7 +188,7 @@ default-character-set=utf8</code></li>
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2726422443&verifier=ec1f6290&dpc=1"></iframe>
 </div>
 
@@ -429,7 +431,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
