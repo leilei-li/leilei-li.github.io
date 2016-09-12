@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/07/31/install-tomcat-centos/index.html">
 <meta property="og:site_name" content="黎雷蕾的技术博客">
 <meta property="og:description" content="转载请注明原作者 @yoshino(简书)写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。如果显示不完整可以在我的简书上查看。">
-<meta property="og:updated_time" content="2016-08-14T15:02:11.000Z">
+<meta property="og:updated_time" content="2016-09-12T13:34:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos环境安装tomcat">
 <meta name="twitter:description" content="转载请注明原作者 @yoshino(简书)写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。如果显示不完整可以在我的简书上查看。">
@@ -295,7 +295,8 @@
       
         <p><strong>转载请注明原作者 @yoshino(简书)</strong><br>写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。<br>如果显示不完整可以在我的简书上查看。<br><a id="more"></a><br>主要是mysql+jdk+tomcat三个部分就能够配置好了  </p>
 <hr>
-<p>#mysql<br>mysql现在有了MariaDB代替，二者几乎完全一样，连命令也差不多，用起来很方便，不过最近用得多的还是mysql<br>貌似centos7不再支持mysql了，不过可以用MariaDB代替，至少我认为两者除了名字不同之外其余的都相同了。</p>
+<p>[TOC]</p>
+<h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><p>mysql现在有了MariaDB代替，二者几乎完全一样，连命令也差不多，用起来很方便，不过最近用得多的还是mysql<br>貌似centos7不再支持mysql了，不过可以用MariaDB代替，至少我认为两者除了名字不同之外其余的都相同了。</p>
 <ul>
 <li>一键安装<br><code>yum install mariadb*</code> 注意*号，是安装它全家 </li>
 <li>安装包的安装<br>暂时没有成功过，以后再来写</li>
@@ -304,14 +305,23 @@ default-character-set=utf8</code></li>
 <li>重启命令<br>service 命令不知道为何用不了了<br><code>$mysql_dir/bin/mysqladmin -uroot -p shutdown</code>关闭<br><code>$mysql_dir/bin/mysqld_safe &amp;</code>启动<br>一般来说会随系统自启的，这个是不用怎么管的</li>
 </ul>
 <hr>
-<p>#jdk<br>这个比较简单  </p>
+<h1 id="jdk"><a href="#jdk" class="headerlink" title="jdk"></a>jdk</h1><p>这个比较简单  </p>
 <ol>
-<li>安装<br>网上下载 jdk-7u79-linux-x64.tar.gz到/usr/local/java<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/java</div><div class="line">sudo tar xvf jdk-7u79-linux-x64.tar.gz</div><div class="line">```  </div><div class="line">2. 配置</div></pre></td></tr></table></figure>
-</li>
+<li>安装  </li>
 </ol>
-<p>vim /etc/profile<br>在下面追加：<br>JAVA_HOME=/usr/local/java/jdk1.7.0_79<br>JRE_HOME=/usr/local/java/jdk1.7.0_79/jre<br>PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin<br>CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib<br>export JAVA_HOME JRE_HOME PATH CLASSPATH<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">运行</div><div class="line">`source /etc/profile`</div><div class="line">查看是否安装成功  </div><div class="line">`java -version`</div><div class="line">***</div><div class="line">#tomcat</div><div class="line">这个最简单了</div><div class="line">下载apache-tomcat-7.0.69.tar.gz到/usr/local</div></pre></td></tr></table></figure></p>
-<p>tar -zxv -f apache-tomcat-7.0.69.tar.gz<br>mv apache-tomcat-7.0.69  tomcat<br><code>``
-启动与停止</code>/usr/local/tomcat/bin/startup.sh<code>`/usr/local/tomcat/bin/shutdown.sh</code><br>改端口号</p>
+<p>网上下载 jdk-7u79-linux-x64.tar.gz到/usr/local/java</p>
+<p><code>cd /usr/local/java</code><br><br><code>sudo tar xvf jdk-7u79-linux-x64.tar.gz</code>  </p>
+<ol>
+<li>配置</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">vim /etc/profile</div><div class="line">在下面追加：  </div><div class="line">JAVA_HOME=/usr/local/java/jdk1.7.0_79</div><div class="line">JRE_HOME=/usr/local/java/jdk1.7.0_79/jre</div><div class="line">PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin</div><div class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib</div><div class="line">export JAVA_HOME JRE_HOME PATH CLASSPATH</div></pre></td></tr></table></figure>
+<p>3.运行</p>
+<p><code>source /etc/profile</code></p>
+<p>4.查看是否安装成功  </p>
+<p><code>java -version</code></p>
+<hr>
+<h1 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h1><p>这个最简单了<br>下载apache-tomcat-7.0.69.tar.gz到/usr/local<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tar -zxv -f apache-tomcat-7.0.69.tar.gz </div><div class="line">mv apache-tomcat-7.0.69  tomcat</div></pre></td></tr></table></figure></p>
+<p><br><br>启动与停止<br><br><br><code>/usr/local/tomcat/bin/startup.sh</code><br><code>/usr/local/tomcat/bin/shutdown.sh</code><br><br><br>改端口号</p>
 <blockquote>
 <p>在Tomcat的conf文件夹里有个server.xml文件，修改里面的<br>Connector<br>port=”80”               maxHttpHeaderSize=”8192”<br>maxThreads=”150” minSpareThreads=”25” maxSpareThreads=”75”<br>enableLookups=”false” redirectPort=”8443” acceptCount=”100”<br>connectionTimeout=”20000” disableUploadTimeout=”true”<br>这段代码，那个port值就是端口号,改成想要的就行了。</p>
 </blockquote>
@@ -512,7 +522,7 @@ default-character-set=utf8</code></li>
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql"><span class="nav-number">1.</span> <span class="nav-text">mysql</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jdk"><span class="nav-number">2.</span> <span class="nav-text">jdk</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tomcat"><span class="nav-number">3.</span> <span class="nav-text">tomcat</span></a></li></ol></div>
             
           </div>
         </section>
