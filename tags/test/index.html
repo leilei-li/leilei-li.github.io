@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="server,linux," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,16 +84,15 @@
 
 
 
-<meta name="description" content="转载请注明原作者 @yoshino(简书)无论是MariaDB还是Mysql，默认都是没有远程登录的权限的。但是直接给root权限不太安全，我建议是增加一个新的账号，让其代替root远程登录。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Mysql增加远程访问权限">
-<meta property="og:url" content="http://yoursite.com/2016/07/31/20160731/index.html">
+<meta name="description" content="Loli must be justice!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="黎雷蕾的博客">
+<meta property="og:url" content="http://yoursite.com/tags/test/index.html">
 <meta property="og:site_name" content="黎雷蕾的博客">
-<meta property="og:description" content="转载请注明原作者 @yoshino(简书)无论是MariaDB还是Mysql，默认都是没有远程登录的权限的。但是直接给root权限不太安全，我建议是增加一个新的账号，让其代替root远程登录。">
-<meta property="og:updated_time" content="2016-09-12T16:00:15.000Z">
+<meta property="og:description" content="Loli must be justice!">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mysql增加远程访问权限">
-<meta name="twitter:description" content="转载请注明原作者 @yoshino(简书)无论是MariaDB还是Mysql，默认都是没有远程登录的权限的。但是直接给root权限不太安全，我建议是增加一个新的账号，让其代替root远程登录。">
+<meta name="twitter:title" content="黎雷蕾的博客">
+<meta name="twitter:description" content="Loli must be justice!">
 
 
 
@@ -114,9 +113,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/31/20160731/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/test/"/>
 
-  <title> Mysql增加远程访问权限 | 黎雷蕾的博客 </title>
+  <title> 标签: test | 黎雷蕾的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -235,153 +234,46 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Mysql增加远程访问权限
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-31T12:10:33+08:00" content="2016-07-31">
-              2016-07-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/动漫/" itemprop="url" rel="index">
-                    <span itemprop="name">动漫</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/31/20160731/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/31/20160731/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p><strong>转载请注明原作者 @yoshino(简书)</strong><br>无论是MariaDB还是Mysql，默认都是没有远程登录的权限的。但是直接给root权限不太安全，我建议是增加一个新的账号，让其代替root远程登录。</p>
-<hr>
-<a id="more"></a>
-<p>假设我们要新建一个用户名:admin 密码：password的账户<br>登录数据库之后只需要键入一下两行代码：<br><code>grant all privileges on *.* to admin@localhost identified by &#39;password&#39; with grant option</code><br><code>grant all privileges on *.* to admin@&quot;%&quot; identified by &#39;password&#39; with grant option</code><br>再重启mysql服务就行了。</p>
-
-      
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        test
+        <small>标签</small>
+      </h2>
     </div>
 
-    <div>
+    
       
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-
-      
-    </div>
-
-    <div>
-      
+            <a class="post-title-link" href="/2016/09/13/test-picture/" itemprop="url">
+              
+                <span itemprop="name">图片测试</span>
+              
+            </a>
         
+      </h1>
 
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-09-13T16:24:35+08:00"
+              content="2016-09-13" >
+          09-13
+        </time>
+      </div>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/server/" rel="tag">#server</a>
-          
-            <a href="/tags/linux/" rel="tag">#linux</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/31/install-tomcat-centos/" rel="prev" title="centos环境安装tomcat">
-                centos环境安装tomcat <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
+
+  
 
 
           </div>
@@ -389,14 +281,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/07/31/20160731/"
-           data-title="Mysql增加远程访问权限" data-url="http://yoursite.com/2016/07/31/20160731/">
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -416,17 +300,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/yoshino.jpg"
@@ -519,17 +394,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <p class="post-toc-empty">此文章未包含目录</p>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -626,10 +490,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 
