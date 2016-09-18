@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[图片测试]]></title>
-      <url>http://yoursite.com/2016/09/13/test-picture/</url>
+      <url>http://leilei-li.github.io/2016/09/13/test-picture/</url>
       <content type="html"><![CDATA[<p>测试图片上传质量</p>
 <a id="more"></a>
 <p>[TOC]</p>
@@ -16,7 +16,7 @@
     
     <entry>
       <title><![CDATA[Python:Mac同时安装Python2.x和3.x]]></title>
-      <url>http://yoursite.com/2016/08/23/Python2and3/</url>
+      <url>http://leilei-li.github.io/2016/08/23/Python2and3/</url>
       <content type="html"><![CDATA[<p><strong>转载请注明原作者 @yoshino(简书)</strong><br>Mac默认的安装版本是2.7.X，但是未来的趋势将会是python3，由于MacOS依赖2.7的python，所以不能改动默认的python版本。</p>
 <hr>
 <a id="more"></a>
@@ -31,7 +31,7 @@
     
     <entry>
       <title><![CDATA[python:整数分解成质因数乘积形式]]></title>
-      <url>http://yoursite.com/2016/08/14/python1/</url>
+      <url>http://leilei-li.github.io/2016/08/14/python1/</url>
       <content type="html"><![CDATA[<p><strong>转载请注明原作者 @yoshino(简书)</strong><br>很简单的一道算法题，但是很多同学写了一堆循环，不是很好理解。闲来无事自己撸了一遍。直接上代码，很好理解</p>
 <hr>
 <a id="more"></a>
@@ -40,7 +40,7 @@
     
     <entry>
       <title><![CDATA[部署teamtalk服务器]]></title>
-      <url>http://yoursite.com/2016/08/02/install-Teantalk/</url>
+      <url>http://leilei-li.github.io/2016/08/02/install-Teantalk/</url>
       <content type="html"><![CDATA[<p>转载请注明原作者 @yoshino(简书),显示不完整可以在我的简书里面看到。</p>
 <p>最近老师让做一个局域网工具，同学都推荐了TeamTalk，最后还是慢慢摸索了一天，最后勉强跑起来了。<br><a id="more"></a><br>环境是阿里云的centos7 64bit。</p>
 <p>懒人搭法<br>本宝宝第一想法肯定是找一键部署脚本呀，最后还真的让本宝宝找到了，O(∩_∩)O哈哈~，不多说哈哈镜中缘这篇博文里的方法完全可以实现，不过要注意的是，安装到PHP的时候，有可能会报虚拟内存不足的错误，很好解决（swap）。</p>
@@ -77,7 +77,7 @@
     
     <entry>
       <title><![CDATA[centos环境安装tomcat]]></title>
-      <url>http://yoursite.com/2016/07/31/install-tomcat-centos/</url>
+      <url>http://leilei-li.github.io/2016/07/31/install-tomcat-centos/</url>
       <content type="html"><![CDATA[<p><strong>转载请注明原作者 @yoshino(简书)</strong><br>写这篇文章主要是熟悉使用markdown，再者是为了把常用的tomcat配置方法记下来，这样子就不用到处找攻略了。<br>如果显示不完整可以在我的简书上查看。<br><a id="more"></a><br>主要是mysql+jdk+tomcat三个部分就能够配置好了  </p>
 <hr>
 <p>[TOC]</p>
@@ -115,7 +115,7 @@ default-character-set=utf8</code></li>
     
     <entry>
       <title><![CDATA[Mysql增加远程访问权限]]></title>
-      <url>http://yoursite.com/2016/07/31/20160731/</url>
+      <url>http://leilei-li.github.io/2016/07/31/20160731/</url>
       <content type="html"><![CDATA[<p><strong>转载请注明原作者 @yoshino(简书)</strong><br>无论是MariaDB还是Mysql，默认都是没有远程登录的权限的。但是直接给root权限不太安全，我建议是增加一个新的账号，让其代替root远程登录。</p>
 <hr>
 <a id="more"></a>
