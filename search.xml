@@ -4,6 +4,16 @@
   
     
     <entry>
+      <title><![CDATA[测试数学公式]]></title>
+      <url>http://leilei-li.github.io/2016/10/13/mathtype/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<p>$$<br>\frac{1}{2f(x)}+\sqrt(f(x))^f(x)<br>$$</p>
+<p>$$<br>\begin{equation}<br>A=\left(<br>\begin{matrix}<br>1&amp;2\<br>3&amp;4\<br>\end{matrix}<br>\right)<br>\end{equation}<br>$$</p>
+<p>$$<br>\begin{equation}<br>A=\left[<br>\begin{matrix}<br>1&amp;2&amp;3\<br>3&amp;4&amp;4\<br>5&amp;4&amp;4\<br>\end{matrix}<br>\right]<br>\end{equation}<br>$$</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[U盘装centos服务器版]]></title>
       <url>http://leilei-li.github.io/2016/09/23/install-centos/</url>
       <content type="html"><![CDATA[<p>记录安装服务器版踩过的坑</p>
