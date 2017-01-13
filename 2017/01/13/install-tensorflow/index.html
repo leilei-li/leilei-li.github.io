@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux,python," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="若得我命皆由我，才能火里种金莲">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://leilei-li.github.io/tags/index.html">
+<meta name="description" content="本文主要是在centos服务器上安装虚拟环境下的tensorflow，并且配置怎么使用远程访问服务器上的jupyter notebook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装jupyter和tensorflow">
+<meta property="og:url" content="http://leilei-li.github.io/2017/01/13/install-tensorflow/index.html">
 <meta property="og:site_name" content="黎雷蕾的博客">
-<meta property="og:description" content="若得我命皆由我，才能火里种金莲">
-<meta property="og:updated_time" content="2016-09-12T13:08:41.000Z">
+<meta property="og:description" content="本文主要是在centos服务器上安装虚拟环境下的tensorflow，并且配置怎么使用远程访问服务器上的jupyter notebook">
+<meta property="og:updated_time" content="2017-01-13T09:27:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="若得我命皆由我，才能火里种金莲">
+<meta name="twitter:title" content="安装jupyter和tensorflow">
+<meta name="twitter:description" content="本文主要是在centos服务器上安装虚拟环境下的tensorflow，并且配置怎么使用远程访问服务器上的jupyter notebook">
 
 
 
@@ -114,15 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://leilei-li.github.io/tags/"/>
+  <link rel="canonical" href="http://leilei-li.github.io/2017/01/13/install-tensorflow/"/>
 
-  <title>
-  
-
-  
-    标签 | 黎雷蕾的博客
-  
-</title>
+  <title> 安装jupyter和tensorflow | 黎雷蕾的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -153,7 +147,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -276,16 +270,193 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 4 个标签
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                安装jupyter和tensorflow
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-13T17:19:37+08:00" content="2017-01-13">
+              2017-01-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/13/install-tensorflow/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/13/install-tensorflow/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/13/install-tensorflow/" class="leancloud_visitors" data-flag-title="安装jupyter和tensorflow">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/linux/" style="font-size: 30px; color: #111">linux</a> <a href="/tags/python/" style="font-size: 18px; color: #8e8e8e">python</a> <a href="/tags/server/" style="font-size: 24px; color: #4f4f4f">server</a> <a href="/tags/test/" style="font-size: 12px; color: #ccc">test</a>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文主要是在centos服务器上安装虚拟环境下的tensorflow，并且配置怎么使用远程访问服务器上的jupyter notebook</p>
+<hr>
+<a id="more"></a>
+<ol>
+<li>安装tensorflow</li>
+</ol>
+<ul>
+<li>直接pip安装没有成功</li>
+<li>最后采取的办法是下载了对应的.whl文件，采用<br><code>pip install **.whl</code>才成功的</li>
+</ul>
+<ol>
+<li>安装jupyter</li>
+</ol>
+<ul>
+<li>直接pip也没有成功，显示缺少 python.h文件</li>
+<li>最后查阅资料后知道要先安装python-devel<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum install python-devel</div><div class="line">pip install jupyter</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li>jupyter notebook远程访问</li>
+</ol>
+<ul>
+<li>运行ipython</li>
+</ul>
+<ul>
+<li>输入下面代码，生成秘钥,如：<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> notebook.auth <span class="keyword">import</span> passwd</div><div class="line">In [<span class="number">2</span>]: passwd()</div><div class="line">Enter password: </div><div class="line">Verify password: </div><div class="line">Out[<span class="number">2</span>]: <span class="string">'sha1:abc123abc123abc123abc123abc123abc123...'</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>修改配置文件<br><code>vim ~/.jupyter/jupyter_notebook_config.py</code><br>找到下面四项（项目比较多得慢慢找）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">c.NotebookApp.ip=&apos;*&apos;</div><div class="line">c.NotebookApp.password = u&apos;sha:ce...（上面的秘钥）&apos;</div><div class="line">c.NotebookApp.open_browser = False</div><div class="line">c.NotebookApp.port =8888 #随便指定一个端口</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动jupyter<br><code>jupyter notebook</code><br>不成功可能是由于没有IP的原因<br><code>jupyter notebook —ip=127.0.0.1</code></p>
+</li>
+<li>建立ssh通道<br><code>ssh username@address_of_remote -L127.0.0.1:1234:127.0.0.1:8888</code></li>
+<li>在本地就可以使用local：1234进行访问了<br>第一次访问要输入密码或者token<br>在terminal里面找到<br><code>The Jupyter Notebook is running at: http://127.0.0.1:8888/?token=19420b73cd6302cc4bf173ca4b39bc2ac786125ae73791af</code></li>
+<li>就可以看到token了，只要登陆一次再次登录只需要输入<code>localhost:1234</code>即可</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/10/recovery-mariadb/" rel="next" title="用.sql文件恢复数据库">
+                <i class="fa fa-chevron-left"></i> 用.sql文件恢复数据库
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -294,6 +465,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/13/install-tensorflow/"
+           data-title="安装jupyter和tensorflow" data-url="http://leilei-li.github.io/2017/01/13/install-tensorflow/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -313,8 +492,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/yoshino.jpg"
@@ -407,6 +595,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -503,6 +702,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
